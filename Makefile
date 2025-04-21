@@ -4,6 +4,9 @@ DOCKER_COMPOSE?=docker compose
 up:
 	$(DOCKER_COMPOSE) up -d
 
+build:
+	$(DOCKER_COMPOSE) build
+
 sh:
 	$(DOCKER_COMPOSE) exec -it php sh
 
