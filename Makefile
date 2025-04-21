@@ -11,7 +11,7 @@ bench-short:
 	$(DOCKER_COMPOSE) exec -it php ./vendor/bin/phpbench run tests/Benchmark --report=default
 
 bench:
-	$(DOCKER_COMPOSE) exec -it php ./vendor/bin/phpbench run tests/Benchmark --report=aggregate --iterations=3
+	$(DOCKER_COMPOSE) exec -it php ./vendor/bin/phpbench run tests/Benchmark --report=aggregate --iterations=10 --revs=5
 
 bench-dompdf:
 	$(DOCKER_COMPOSE) exec -it php ./vendor/bin/phpbench run tests/Benchmark/DompdfBench.php --report=default

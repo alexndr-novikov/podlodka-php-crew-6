@@ -28,6 +28,8 @@ ENV COMPOSER_HOME="/tmp/composer"
 COPY --chown=podlodka:podlodka --from=composer:2.8.8 /usr/bin/composer /usr/bin/composer
 COPY --chown=podlodka:podlodka ./composer.* .
 
+COPY --chown=podlodka:podlodka ./.docker/config/dev.ini /usr/local/etc/php/conf.d/dev.ini
+
 RUN composer install --no-cache --no-ansi --no-autoloader --no-scripts
 
 COPY --chown=podlodka:podlodka ./ .
