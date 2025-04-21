@@ -1,5 +1,27 @@
 {
     "require": {
-        "mpdf/mpdf": "v8.2.5"
+        "mpdf/mpdf": "v8.2.5",
+        "dompdf/dompdf": "^3.1",
+        "knplabs/knp-snappy": "^1.5",
+        "tecnickcom/tc-lib-pdf": "^8.0",
+        "gotenberg/gotenberg-php": "^2.13"
+    },
+    "require-dev": {
+        "phpbench/phpbench": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Podlodka\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Podlodka\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     }
 }
