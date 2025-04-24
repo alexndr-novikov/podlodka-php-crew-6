@@ -11,7 +11,7 @@ class Snappy implements Renderer
 
     public function __construct() {
         $this->engine = new Pdf('/usr/local/bin/wkhtmltopdf');
-        $this->engine->setOption('orientation', 'Landscape');
+        $this->engine->setOption('orientation', 'Portrait');
     }
 
     public function render() {

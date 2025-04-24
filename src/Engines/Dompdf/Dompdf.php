@@ -11,7 +11,7 @@ class Dompdf implements Renderer
     public function __construct() {
         $this->engine = new Pdf();
         $this->engine->loadHtml(Renderer::INVOICE);
-        $this->engine->setPaper('A4', 'landscape');
+        $this->engine->setPaper('A4');
     }
     public function render() {
         $this->engine->render();
