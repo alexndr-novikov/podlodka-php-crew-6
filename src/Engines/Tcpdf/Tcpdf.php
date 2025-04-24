@@ -5,13 +5,13 @@ namespace Podlodka\Engines\Tcpdf;
 use Podlodka\Engines\Renderer;
 use Spipu\Html2Pdf\Html2Pdf; // wrapper
 
-class Tcpdf implements Renderer
+class Tcpdf
 {
     private Html2Pdf $engine;
 
-    public function __construct() {
+    public function __construct(string $html) {
         $this->engine = new Html2Pdf();
-        $this->engine->writeHTML(self::INVOICE);
+        $this->engine->writeHTML($html);
     }
 
     public function render(): void {

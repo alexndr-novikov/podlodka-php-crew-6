@@ -2,4 +2,5 @@
 .idea
 vendor
 output/*.pdf
+output/*.html
 .DS_Store
