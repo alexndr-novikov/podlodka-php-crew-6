@@ -5,13 +5,13 @@ namespace Podlodka\Engines\Mpdf;
 use Podlodka\Engines\Renderer;
 use Mpdf\Mpdf as Pdf;
 
-class Mpdf implements Renderer
+class Mpdf
 {
     private Pdf $engine;
 
-    public function __construct() {
+    public function __construct(string $html) {
         $this->engine = new Pdf(['format' => 'A4-L']);
-        $this->engine->WriteHTML(Renderer::INVOICE);
+        $this->engine->WriteHTML($html);
     }
 
     public function render() {
