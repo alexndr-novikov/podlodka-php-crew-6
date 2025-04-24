@@ -35,6 +35,7 @@ This repository is designed to benchmark the performance of various PHP librarie
    ```
 3. View the results in the console or generated report files.
 4. If using Gotenberg, ensure the Gotenberg server is running and accessible.
+5. If you want to benchmark a huge file, download it from [this link](https://drive.google.com/file/d/1b98T4vnQISQRPzckx-SqB9L3h5_wILne/view?usp=sharing) and place it in the `tests/data` directory.
 
 ## Libraries Benchmarked
 
@@ -51,3 +52,5 @@ Contributions are welcome! Please follow these steps:
 1. Fork the repository.
 2. Create a new branch for your feature or bugfix.
 3. Submit a pull request with a detailed description of your changes.
+
+`
