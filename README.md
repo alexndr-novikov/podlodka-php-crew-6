@@ -20,7 +20,7 @@ This repository is designed to benchmark the performance of various PHP librarie
    cd podlodka-php-crew-6
    ```
 
-2. Install dependencies using Composer:
+2. Install dependencies using docker compose:
    ```bash
    make build
    make up

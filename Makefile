@@ -2,6 +2,8 @@ DOCKER?=docker
 DOCKER_COMPOSE?=docker compose
 
 up:
+	$(DOCKER_COMPOSE) -f docker-compose.yml up -d
+	$(DOCKER) cp php:/app/vendor ./
 	$(DOCKER_COMPOSE) up -d
 
 build:

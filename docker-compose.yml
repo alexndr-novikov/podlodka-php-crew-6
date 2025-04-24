@@ -8,7 +8,6 @@ services:
     container_name: php
     command: php-fpm
     volumes:
-      - .:/app
       - .docker/config/dev.ini:/usr/local/etc/php/php.ini
     depends_on:
       - gotenberg
