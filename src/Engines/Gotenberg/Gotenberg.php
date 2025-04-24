@@ -13,7 +13,8 @@ class Gotenberg
     private Chromium $engine;
     private string $html;
 
-    public function __construct(string $html) {
+    public function __construct(string $html)
+    {
         $this->html = $html;
     }
 
@@ -51,4 +52,3 @@ class Gotenberg
         Pdf::save($request, '/app/output/', $httpClient);
     }
 }
-
