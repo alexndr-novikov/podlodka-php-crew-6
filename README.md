@@ -39,12 +39,15 @@ This repository is designed to benchmark the performance of various PHP librarie
 
 ## Libraries Benchmarked
 
-The following PHP libraries are included in the benchmark (list may vary based on configuration):
+The following PHP libraries are included in the benchmark:
 - [TCPDF](https://tcpdf.org/)
 - [FPDF](http://www.fpdf.org/)
 - [mPDF](https://mpdf.github.io/)
 - [Dompdf](https://github.com/dompdf/dompdf)
 - [Gotenberg](https://gotenberg.dev/)
+- [Wkhtmltopdf via Snappy](https://github.com/KnpLabs/snappy)
+- [WeasyPrint](https://weasyprint.org/)
+- [Chromium via Snappdf](https://github.com/beganovich/snappdf)
 
 ## Contributing
 
@@ -52,5 +55,3 @@ Contributions are welcome! Please follow these steps:
 1. Fork the repository.
 2. Create a new branch for your feature or bugfix.
 3. Submit a pull request with a detailed description of your changes.
-
-`
