@@ -10,7 +10,7 @@ class Snappy
     private string $html;
     public function __construct(string $html)
     {
-        $this->engine = new Pdf('/usr/local/bin/wkhtmltopdf');
+        $this->engine = new Pdf('/usr/bin/wkhtmltopdf');
         $this->engine->setOption('orientation', 'Portrait');
         $this->html = $html;
     }

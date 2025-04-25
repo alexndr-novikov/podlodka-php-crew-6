@@ -3,5 +3,11 @@ version: "3.8"
 services:
   php:
     volumes:
-      - .:/app
+      - ./output:/app/output
+      - ./src:/app/src
+      - ./tests:/app/tests
+      - ./composer.json:/app/composer.json
+      - ./composer.lock:/app/composer.lock
+      - ./Makefile:/app/Makefile
+      - ./phpbench.json:/app/phpbench.json
       - .docker/config/dev.ini:/usr/local/etc/php/php.ini
