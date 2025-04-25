@@ -36,3 +36,6 @@ bench-snappy:
 bench-tcpdf:
 	$(DOCKER_COMPOSE) exec -it php ./vendor/bin/phpbench run tests/Benchmark/Tests/TcpdfBench.php --report=aggregate
 
+bench-weasy:
+	$(DOCKER_COMPOSE) exec -it php ./vendor/bin/phpbench run tests/Benchmark/Tests/WeasyPrintBench.php --report=aggregate
+

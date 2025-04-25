@@ -6,7 +6,8 @@
         "tecnickcom/tc-lib-pdf": "^8.0",
         "gotenberg/gotenberg-php": "^2.13",
         "php-http/guzzle7-adapter": "^1.1",
-        "spipu/html2pdf": "^5.3"
+        "spipu/html2pdf": "^5.3",
+        "pontedilana/php-weasyprint": "^2.0"
     },
     "require-dev": {
         "phpbench/phpbench": "^1.4"
