@@ -16,9 +16,12 @@ class WeasyPrint
     public function render()
     {
         $pdf = new Pdf('/venv/bin/weasyprint');
+        $pdf->disableTimeout();
+        $microtime = microtime(true);
+
         $pdf->generateFromHtml(
             $this->html,
-            '/app/output/weasy_invoice' . date('Ymd_His') . '.pdf'
+            '/app/output/weasy_invoice' . date('Ymd_His', (int)$microtime) . sprintf('_%03d', ($microtime - (int)$microtime) * 1000) . '.pdf'
         );
     }
 }

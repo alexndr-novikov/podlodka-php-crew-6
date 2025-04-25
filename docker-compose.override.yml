@@ -5,6 +5,7 @@ services:
     volumes:
       - ./output:/app/output
       - ./src:/app/src
+      - ./tests:/app/tests
       - ./composer.json:/app/composer.json
       - ./composer.lock:/app/composer.lock
       - ./Makefile:/app/Makefile
