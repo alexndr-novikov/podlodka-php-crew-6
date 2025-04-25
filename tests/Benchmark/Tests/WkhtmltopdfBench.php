@@ -5,7 +5,7 @@ namespace Podlodka\tests\Benchmark\Tests;
 use Podlodka\Engines\Snappy\Snappy;
 use Podlodka\Tests\Benchmark\AbstractInvoiceBench;
 
-class SnappyBench extends AbstractInvoiceBench
+class WkhtmltopdfBench extends AbstractInvoiceBench
 {
     /**
      * @ParamProviders("provideInvoice")
