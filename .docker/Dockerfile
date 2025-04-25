@@ -2,31 +2,32 @@
 
 FROM php:8.4-fpm as base
 
-# Install PHP extensions using mlocati/php-extension-installer
-RUN apt-get update && apt-get install -y curl gnupg && \
-    curl -fsSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions > /usr/local/bin/install-php-extensions && \
-    chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions opcache zip gd xsl dom exif intl pcntl bcmath sockets
-
-# Install wkhtmltopdf dependencies
-RUN apt-get update && apt-get install -y \
-    libxrender1 \
-    libxext6 \
-    fontconfig-config \
-    fontconfig \
-    wkhtmltopdf
-
-# Install WeasyPrint and dependencies
-RUN apt-get install -y \
-    python3 \
-    python3-venv \
-    python3-pip \
-    libcairo2 \
-    libpango-1.0-0 \
-    libgdk-pixbuf2.0-0 \
-    libffi-dev \
-    && python3 -m venv /venv \
-    && /venv/bin/pip install weasyprint
+RUN --mount=type=bind,from=mlocati/php-extension-installer:2.7,source=/usr/bin/install-php-extensions,target=/usr/local/bin/install-php-extensions \
+     apt-get update && \
+     apt-get install -y --no-install-recommends \
+             curl gnupg \
+             libxrender1 \
+             libxext6 \
+             fontconfig-config \
+             fontconfig \
+             wkhtmltopdf \
+             python3 \
+             python3-venv \
+             python3-pip \
+             libcairo2 \
+             libpango-1.0-0 \
+             libgdk-pixbuf2.0-0 \
+             libffi-dev \
+             chromium \
+             chromium-driver && \
+    install-php-extensions opcache zip gd xsl dom exif intl pcntl bcmath sockets &&  \
+    python3 -m venv /venv &&  \
+    /venv/bin/pip install weasyprint && \
+    # Cleanup
+    apt-get remove -y curl gnupg python3-pip libffi-dev && \
+    apt-get autoremove -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV PATH="/venv/bin:$PATH"
 
